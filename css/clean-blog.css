@@ -9,7 +9,7 @@ h5,
 h6{font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:800;}
 a{color:#FF0000 !important;}
 a:hover,
-a:focus{color:#fff;}
+a:focus{color:#fff !important;}
 a img:hover,
 a img:focus{cursor:zoom-in;}
 blockquote{color:#808080;font-style:italic;}
