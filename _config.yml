@@ -1,17 +1,15 @@
 # Site settings
 title: ""
-default_author: BrianSQL
-description: "BrianSQL's Blog | Portfolio "  # used in site head
+default_author: CensedPie
+description: "CensedPie's Portfolio "  # used in site head
 
 # register on google analytics and replace this token
 google_analytics: ###
 
 
 # footer details. Deleting the value would remove it from footer.
-github_username:  BrianSQL
-email: brian.kropilak@gmail.com
-stackoverflow_username: story/9320187
-linkedin_username : brian-kropilak-19799b113
+github_username:  CensedPie
+email: alex.savu@hotmail.com
 
 rss : false
 
