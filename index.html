@@ -1,106 +1,18 @@
-<!DOCTYPE html>
-<!-- saved from url=(0027)https://briansql.github.io/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+---
+layout: page
+title : CensedPie
+header-img: "img/home-bg.jpg"
+description: "Portfolio"
+---
 
-    
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="CensedPie&#39;s Portfolio ">
-
-    <title>CensedPie </title>
-
-    <link rel="canonical" href="https://censedpie.github.io/">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="./index_files/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./index_files/clean-blog.css">
-
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="./index_files/syntax.css">
-
-    <!-- Custom Fonts -->
-    <link href="./index_files/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="./index_files/css" rel="stylesheet" type="text/css">
-    <link href="./index_files/css(1)" rel="stylesheet" type="text/css">
-    <link type="application/atom+xml" rel="alternate" href="https://censedpie.github.io/feed.xml" title="">
-
-</head>
-
-
-<body>
-
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top is-fixed is-visible">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="https://censedpie.github.io/"></a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="https://censedpie.github.io/">home</a>
-                </li>
-                <li>
-                    <a href="https://censedpie.github.io/blog/">blog</a>
-                </li>
-                <li>
-                    <a href="https://censedpie.github.io/resume/Resume.pdf">resume</a>
-                </li>
-                <li>
-                    <a href="https://censedpie.github.io/search/" class="nav-search-link" title="SEARCH">
-                        <span class="fa fa-search nav-search-icon"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-
-
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url(&#39;/img/home-bg.jpg&#39;)">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>CensedPie</h1>
-                    <hr class="small">
-                    <span class="subheading">
-                        
-                            Portfolio
-                        
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- About Content -->
+<!-- About Content -->
 <section id="about">
 	<div>
-		<p>
-		Welcome to CensedPie's Online Portfolio!</p><p> I'm an aspiring Software Engineer currently attending Politehnica University: FILS College in Bucharest, Romania</p>
+		<p>Welcome to CensedPie's Online Portfolio!</p>
+		<p>I'm an aspiring Software Engineer currently attending Politehnica University: FILS College in Bucharest, Romania</p>
 
 		<p>As a passionate gamer and programmer, I wish to enter the Game Programming industry and work on projects with other people</p>
-		<p> Currently I have worked in very small groups on a few projects either related to college or personal projects.</p>
+		<p>Currently I have worked in very small groups on a few projects either related to college or personal projects.</p>
 
 
 	</div>
@@ -110,32 +22,32 @@
 <section id="portfolio">
 	<div class="row">
 		<div class="text-center">
-			<h2>Portfolio | Projects</h2>
+			<h2>Projects</h2>
 			<hr>
 		</div>
 	</div>
 
 	<div class="row">
-		
+		{% for item in site.portfolio %}
 		<div class="col-sm-4 portfolio-item">
-			<a href="https://censedpie.github.io/#jess" class="portfolio-link" data-keyboard="true" data-toggle="modal">
-				<div class="caption">
-					<div class="caption-content">
-						JESS OS Discord Bot<p></p>
+			<a href="#{{ item.anchor }}" class="portfolio-link" data-keyboard="true" data-toggle="modal">
+				<div class="caption" >
+					<div class="caption-content" >
+						{{ item.title }}<p></p>
 						<i class="fa fa-search-plus"></i><p></p>
 						
 					</div>
 				</div>
-				<img src="./index_files/hal.png" class="img-responsive" alt="">
+				<img src="{{ item.image }}" class="img-responsive" alt="">
 			</a>
 		</div>
-		
-	</div></section>
+		{% endfor %}
+	</section>
 
 	<!-- Portfolio Modals -->
 	<section id="portfolio modals">
-		
-		<div class="portfolio-modal modal fade" id="jess" tabindex="-1" role="dialog" aria-hidden="true">
+		{% for item in site.portfolio %}
+		<div class="portfolio-modal modal fade" id="{{ item.anchor }}" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-content">
 				<div class="close-modal" data-dismiss="modal">
 					<div class="lr">
@@ -147,17 +59,17 @@
 					<div class="row">
 						<div class="col-lg-8 col-lg-offset-2">
 							<div class="modal-body">
-								<h2>JESS Discord Bot</h2>
+								<h2>{{ item.title }}</h2>
 								<hr class="star-primary">
-								<img src="./index_files/hal.png" class="img-responsive img-centered" alt="">
-								<p></p><p>The purpose of this open source project is to fill a resource gap we noticed while programming our own Discord Bot; the lack of material available to programmers.</p><p>Before JESS, there were two polarized categories of material.</p><p>Very basic projects covering intro tasks</p><p> &amp;</p><p>Bloated, Overly-Complex Niche projects with little to no documentation</p><p>The JESS project fills this gap by providing open source code that is highly functional, well documented, and easily adaptable to the end user.</p><p>The Open source project can be found at <a href="https://github.com/CensedPie/JESS">https://github.com/CensedPie/JESS</a>.</p><p></p>
+								<img src="{{ item.image }}" class="img-responsive img-centered" alt="">
+								<p>{{ item.description }}</p>
 								<ul class="list-inline item-details">
 									<li>Date:
-										<strong>March 2018
+										<strong>{{ item.date | date: '%B %Y' }}
 										</strong>
 									</li>
 									<li>Languages:
-										<strong>JS / Node.js
+										<strong>{{ item.category }}
 										</strong>
 									</li>
 								</ul>
@@ -168,78 +80,5 @@
 				</div>
 			</div>
 		</div>
-		
+		{% endfor %}
 	</section>
-
-            <br>
-            
-            <br>
-        </div>
-    </div>
-</div>
-
-<hr>
-
-
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
-                    
-                    
-                    
-                    <li>
-                        <a href="https://github.com/CensedPie">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li>
-                        <a href="mailto:alex.savu@hotmail.com">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                </ul>
-                <p class="copyright text-muted">
-                
-                
-            </p></div>
-        </div>
-    </div>
-</footer>
-
-<!-- jQuery -->
-<script src="./index_files/jquery.min.js.download"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="./index_files/bootstrap.min.js.download"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="./index_files/clean-blog.min.js.download"></script>
-
-
-
-    
-
-</body></html>

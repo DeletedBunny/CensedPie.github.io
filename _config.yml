@@ -1,0 +1,37 @@
+# Site settings
+title: ""
+default_author: BrianSQL
+description: "BrianSQL's Blog | Portfolio "  # used in site head
+
+# register on google analytics and replace this token
+google_analytics: ###
+
+
+# footer details. Deleting the value would remove it from footer.
+github_username:  BrianSQL
+email: brian.kropilak@gmail.com
+stackoverflow_username: story/9320187
+linkedin_username : brian-kropilak-19799b113
+
+rss : false
+
+# used for portfolio on home page
+collections:
+  - portfolio
+
+# used to estimate reading time
+wpm: 150
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+port: 8888
+permalink: /blog/:title
+
+# jekyll-paginate. for paginating blog posts.
+paginate: 5
+paginate_path: blog/page:num
+
+# gem dependencies
+plugins: [jekyll-paginate, jekyll-feed, jekyll-gist]
